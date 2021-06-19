@@ -1,0 +1,15 @@
+.webgl-content {
+  position: absolute;
+  top: 2%;
+   left: 2%;
+  /*-webkit-transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);*/
+}
+
+textarea{
+  resize: none;
+ /* display: flex;
+  flex-direction:column-reverse; */
+  margin-top: 1px;
+}
+
