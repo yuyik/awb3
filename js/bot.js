@@ -298,19 +298,19 @@ async mine(){
 			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine?' + '?wallet='+wax.userAccount 
 			break;
 		case "ninjamine-vip":
-			urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
+			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
 			break;
 		case "kiat-vip":
-			urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			let urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
 			break;
 		case "kiat-vip1":
-			urlNinJa = `https://Dukidik1.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			let urlNinJa = `https://Dukidik1.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
 			break;
 		case "kiat-vip2":
-			urlNinJa = `https://Dukidik2.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			let urlNinJa = `https://Dukidik2.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
 			break;
 		case "kiat-vip3":
-			urlNinJa = `https://Dukidik3.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			let urlNinJa = `https://Dukidik3.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
 			break;			
 	}
 	console.log('urlNinJa',urlNinJa)
