@@ -298,10 +298,10 @@ async mine(){
 			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine?' + '?wallet='+wax.userAccount 
 			break;
 		case "ninjamine-vip":
-			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
+			urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
 			break;
 		case "kiat-vip":
-			let urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
 			break;
 		case "kiat-vip1":
 			urlNinJa = `https://Dukidik1.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
