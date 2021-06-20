@@ -285,26 +285,57 @@ async mine(){
 //		-------------------------------------------------------------
 	
     const serverGetNonce = document.querySelector('input[name="server"]:checked').value
-    if(serverGetNonce !== 'alien'){
-      let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine?' + '?wallet='+wax.userAccount     
-      if(serverGetNonce == 'ninjamine-vip'){
-        urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
-      }else if(serverGetNonce == 'kiat-vip'){
-        urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
-      }
-      console.log('urlNinJa',urlNinJa)
-      nonce = await this.postData(urlNinJa, {}, 'GET',{Origin : ""}, 'raw')
-      if(nonce !== ''){
-        if(serverGetNonce == 'ninjamine'){
-          message = 'Ninja limit: ' + nonce
-        }else if(serverGetNonce == 'ninjamine-vip'){
-          message = 'Ninja VIP god mode: ' + nonce
-        }else{
-          message = "kiat-vip-Mine : " + nonce
-        }     
-      }
-      console.log(message)
-    }
+ //   if(serverGetNonce !== 'alien'){
+    //  let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine?' + '?wallet='+wax.userAccount     
+      //if(serverGetNonce == 'ninjamine-vip'){
+        //urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
+      //}else if(serverGetNonce == 'kiat-vip'){
+        //urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+      //}
+	  
+	switch (serverGetNonce) {
+		case "ninjamine":
+			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine?' + '?wallet='+wax.userAccount 
+			break;
+		case "ninjamine-vip":
+			let urlNinJa = 'https://server-mine-b7clrv20.an.gateway.dev/server_mine_vip' +'?wallet='+wax.userAccount
+			break;
+		case "kiat-vip":
+			let urlNinJa = `https://DarkcyanAttentiveDatabase.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			break;
+		case "kiat-vip1":
+			urlNinJa = `https://Dukidik1.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			break;
+		case "kiat-vip2":
+			urlNinJa = `https://Dukidik2.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			break;
+		case "kiat-vip3":
+			urlNinJa = `https://Dukidik3.yuyik.repl.co/mine?waxaccount=${wax.userAccount}&difficulty=${difficulty}&lastMineTx=${last_mine_tx}`
+			break;			
+	}
+	console.log('urlNinJa',urlNinJa)
+	nonce = await this.postData(urlNinJa, {}, 'GET',{Origin : ""}, 'raw')
+	if(nonce !== ''){
+		if(serverGetNonce == 'ninjamine'){
+			message = 'Ninja limit: ' + nonce
+		}else if(serverGetNonce == 'ninjamine-vip'){
+			message = 'Ninja VIP : ' + nonce
+			
+		}else if(serverGetNonce == 'kiat-vip1'){
+			message = 'kiat VIP 1 : ' + nonce + " ( " + timeuse + " Sec) "
+			
+		}else if(serverGetNonce == 'kiat-vip2'){
+			message = 'kiat VIP 2 : ' + nonce + " ( " + timeuse + " Sec) "
+
+		}else if(serverGetNonce == 'kiat-vip3'){
+			message = 'kiat VIP 3 : ' + nonce + " ( " + timeuse + " Sec) "
+		
+		}else{
+			message = "kiat VIP : " + nonce + " ( " + timeuse + " Sec) "
+		}     
+	}
+	console.log(message)
+    //}
 
     if(serverGetNonce == 'alien' || nonce == ''){
       const mine_work = await background_mine(wax.userAccount)
@@ -313,10 +344,10 @@ async mine(){
       message = 'Alien: ' + nonce
     }
     this.checkInvalid = false;
-    this.appendMessage(`${message}`)
+this.appendMessage(`${message}`,'3')
     return nonce;
   }catch (err) {
-    this.appendMessage(`getNonce Error message : ${err.message}`)
+    this.appendMessage(`getNonce Error message : ${err.message}`,'3')
     this.start()
   }
 }
